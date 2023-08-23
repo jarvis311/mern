@@ -14,6 +14,11 @@ const _dirname = path.dirname("")
 const buildPath = path.join(_dirname , "../frontend/build");
 
 app.use(express.static(buildPath))
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://your-website-domain.com');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.get("/*", function(req, res){
 
@@ -27,7 +32,6 @@ app.get("/*", function(req, res){
       );
 
 })
-
 
 app.listen(5000, () => {
   console.log("server is running at port 5000");

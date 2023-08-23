@@ -26,7 +26,7 @@ const Dashboard = () => {
   //get users Data
   const getUsersData = () => {
     axios
-      .get("http://localhost:5000/users")
+      .get("http://13.233.244.66/users")
       .then((res) => {
         setEmployeeData(res.data.data);
         setLoading(false);

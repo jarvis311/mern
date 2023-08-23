@@ -28,7 +28,7 @@ const AddUser = ({ getUsersData }) => {
   //create new user function call
   const createUser = (values) => {
     axios
-      .post(`http://localhost:5000/create-user`, values)
+      .post(`http://13.233.244.66/create-user`, values)
       .then((res) => {
         getUsersData();
         toast({
